@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Mini App</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+      #circle {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: #ccc;
+        display: inline-block;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="user-count">0</h1>
+    <div id="circle" onclick="handleClick()"></div>
+    <script>
+      let userCount = 0;
+      function handleClick() {
+        userCount++;
+        document.getElementById("user-count").innerText = userCount;
+        Telegram.WebApp.sendData(String(userCount));
+      }
+    </script>
+  </body>
+</html>
